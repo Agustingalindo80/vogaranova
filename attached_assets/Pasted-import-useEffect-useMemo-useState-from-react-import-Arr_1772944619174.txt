@@ -1,0 +1,1207 @@
+import { useEffect, useMemo, useState } from "react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Compass,
+  Globe2,
+  Layers3,
+  Menu,
+  Shield,
+  Sparkles,
+  Target,
+  Workflow,
+  X,
+} from "lucide-react";
+
+type Locale = "es" | "en" | "pt";
+type Page = "home" | "about" | "services" | "methodology" | "contact";
+
+export default function VogaraWebsite() {
+  const [locale, setLocale] = useState<Locale>("es");
+  const [page, setPage] = useState<Page>("home");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const content = {
+    es: {
+      brand: "VOGARA NOVA",
+      tagline: "Advisory · Delivery · Transformation",
+      nav: {
+        home: "Inicio",
+        about: "Nosotros",
+        services: "Servicios",
+        methodology: "Metodología",
+        contact: "Contacto",
+      },
+      langLabel: "Idioma",
+      langNames: { es: "ES", en: "EN", pt: "PT" },
+      heroBadge: "Modelo premium de transformación",
+      heroTitleBefore: "Excelencia en delivery con un",
+      heroTitleAccent: " sistema operativo premium",
+      heroTitleAfter: " para la transformación moderna.",
+      heroText:
+        "VOGARA NOVA combina fortaleza consultiva, ejecución disciplinada y gobierno habilitado por IA para aportar claridad, control y resultados de negocio medibles en iniciativas complejas.",
+      heroPrimary: "Agendar conversación ejecutiva",
+      heroSecondary: "Explorar servicios",
+      homeStats: [
+        { value: "Ejecutivo", label: "Visibilidad primero" },
+        { value: "IA", label: "Gobierno habilitado" },
+        { value: "End-to-End", label: "Desde advisory hasta adopción" },
+      ],
+      home: {
+        operatingLabel: "Modelo operativo",
+        operatingTitle: "Advisory + Delivery + Gobierno con IA",
+        operatingBadge: "Nova",
+        operatingCards: [
+          ["Visibilidad ejecutiva", "Control real sobre alcance, avance, riesgos y resultados"],
+          ["Delivery estructurado", "Un framework repetible diseñado para implementaciones complejas"],
+          ["Habilitación escalable", "Métodos, activos y controles que crecen con el cliente"],
+        ],
+        servicesEyebrow: "Capacidades",
+        servicesTitle: "Servicios diseñados para iniciativas de alta exigencia.",
+        servicesText:
+          "No vendemos solamente estrategia. Diseñamos, estructuramos y ejecutamos transformación con un estándar de delivery que protege valor y genera confianza ejecutiva.",
+        services: [
+          {
+            icon: Layers3,
+            title: "Delivery de Transformación",
+            description:
+              "Liderazgo end-to-end para implementaciones de CRM, operaciones de servicio, experiencia del cliente y programas de transformación digital.",
+          },
+          {
+            icon: Sparkles,
+            title: "Ejecución Gobernada con IA",
+            description:
+              "Rigor operativo reforzado con gobierno impulsado por IA, controles de delivery, seguimiento de resultados de negocio y formas de trabajo escalables.",
+          },
+          {
+            icon: Compass,
+            title: "Advisory y Estructuración Pre-Sales",
+            description:
+              "Desde el shaping de oportunidades y el encuadre de la solución hasta la protección del alcance, la planeación del delivery y la alineación ejecutiva.",
+          },
+          {
+            icon: Shield,
+            title: "Habilitación de Plataformas",
+            description:
+              "Soporte para ecosistemas Salesforce, Microsoft y aplicaciones modernas construidas a la medida con una mentalidad práctica y orientada a la ejecución.",
+          },
+        ],
+        gainsEyebrow: "Lo que gana el cliente",
+        gainsTitle: "Menos ruido en delivery. Más control. Mejores resultados.",
+        gainsText:
+          "VOGARA NOVA ayuda a los equipos de liderazgo a pasar de una ejecución fragmentada a un modelo de transformación más estructurado, visible y escalable, sin sacrificar velocidad ni confianza ejecutiva.",
+        gains: [
+          "Mayor protección del alcance",
+          "Gobierno de delivery más saludable",
+          "Resultados de implementación más predecibles",
+          "Mayor confianza de stakeholders",
+        ],
+      },
+      about: {
+        eyebrow: "Nosotros",
+        title: "Una firma construida para elevar la forma en que se diseña y ejecuta la transformación.",
+        intro:
+          "VOGARA NOVA nace con una visión clara: combinar advisory de nivel ejecutivo, excelencia operativa y un marco moderno de gobierno para que la transformación deje de depender de improvisación.",
+        pillars: [
+          {
+            title: "Claridad estratégica",
+            text: "Ayudamos a definir mejor el problema, el alcance, las decisiones críticas y la ruta de ejecución antes de que la complejidad se convierta en costo.",
+          },
+          {
+            title: "Disciplina operativa",
+            text: "Instalamos una forma de trabajo que permite velocidad con control, sin convertir el gobierno en burocracia.",
+          },
+          {
+            title: "Experiencia premium",
+            text: "Cada interacción, artefacto y conversación debe transmitir sofisticación, precisión y confianza al cliente.",
+          },
+        ],
+        focusTitle: "Dónde generamos más valor",
+        focusItems: [
+          "Programas de transformación empresarial",
+          "Implementaciones de CRM y plataformas de servicio",
+          "Pre-sales estructurado y protección de alcance",
+          "Gobierno de delivery y adopción",
+          "Firmas de implementación en crecimiento",
+          "Modelos operativos con soporte de IA",
+        ],
+      },
+      servicesPage: {
+        eyebrow: "Servicios",
+        title: "Una oferta de servicios construida para acompañar desde el shaping hasta la adopción.",
+        intro:
+          "Nuestro portafolio prioriza claridad, control y ejecución. Cada servicio existe para reducir ambigüedad, proteger el valor del programa y mejorar la experiencia del cliente final.",
+        cards: [
+          {
+            icon: Compass,
+            title: "Advisory & Pre-Sales",
+            bullets: [
+              "Structuring de oportunidades y discovery ejecutivo",
+              "Alineación de stakeholders y visión de solución",
+              "Protección de alcance, supuestos y riesgos",
+              "Handoff sólido de ventas a delivery",
+            ],
+          },
+          {
+            icon: Layers3,
+            title: "Transformation Delivery",
+            bullets: [
+              "Liderazgo integral del programa",
+              "Gobierno de trabajo, riesgos y decisiones",
+              "Coordinación multi-equipo y multi-workstream",
+              "Seguimiento hacia resultados de negocio",
+            ],
+          },
+          {
+            icon: Workflow,
+            title: "Operating Model Design",
+            bullets: [
+              "Diseño de frameworks y playbooks de delivery",
+              "Estandarización de procesos y artefactos",
+              "Modelos de control y visibilidad ejecutiva",
+              "Escalamiento para firmas en crecimiento",
+            ],
+          },
+          {
+            icon: Sparkles,
+            title: "AI-Enabled Governance",
+            bullets: [
+              "Automatización de controles operativos",
+              "Trazabilidad de decisiones y riesgos",
+              "Soporte a gobernanza y reporting",
+              "Capas de inteligencia para ejecución disciplinada",
+            ],
+          },
+        ],
+        modelsTitle: "Modelos de engagement",
+        models: [
+          ["Strategic Advisory", "Para momentos de definición, priorización y toma de decisiones críticas."],
+          ["Delivery Leadership", "Para programas que requieren dirección operativa sólida y acompañamiento continuo."],
+          ["Operating System Buildout", "Para organizaciones que necesitan formalizar su forma de vender y entregar transformación."],
+        ],
+      },
+      methodology: {
+        eyebrow: "Metodología",
+        title: "Una metodología que conecta shaping, delivery, gobierno y adopción.",
+        intro:
+          "Nuestra metodología está pensada para reducir fricción entre estrategia y ejecución. No se trata solo de fases, sino de un sistema operativo de transformación.",
+        phases: [
+          {
+            label: "01",
+            title: "Diseñar",
+            text: "Definir la oportunidad, alinear stakeholders, estructurar el alcance y crear una ruta de delivery que proteja el valor desde el día uno.",
+          },
+          {
+            label: "02",
+            title: "Construir",
+            text: "Ejecutar con claridad operativa, gobierno, control de calidad y seguimiento transparente del progreso entre equipos y workstreams.",
+          },
+          {
+            label: "03",
+            title: "Adoptar",
+            text: "Impulsar readiness, activación, confianza del usuario y resultados de negocio medibles más allá del go-live técnico.",
+          },
+        ],
+        governanceTitle: "Capas de gobierno",
+        governance: [
+          "Visibilidad ejecutiva sobre progreso, riesgo y valor",
+          "Controles de decisión y protección de alcance",
+          "Seguimiento orientado a outcomes, no solo a actividades",
+          "Disciplina operacional reforzada con IA cuando agrega valor",
+        ],
+        differentiatorsTitle: "Qué la hace diferente",
+        differentiators: [
+          "Conecta pre-sales y delivery sin ruptura",
+          "Está diseñada para complejidad real, no para teoría de consultoría",
+          "Permite escalar manteniendo control y experiencia premium",
+          "Crea una base clara para modelos operativos modernos",
+        ],
+      },
+      contact: {
+        eyebrow: "Contacto",
+        title: "Conversemos sobre la próxima etapa de su transformación.",
+        intro:
+          "Si necesita mayor control, mejor estructuración o un estándar más alto de delivery, VOGARA NOVA puede ayudarle a diseñar la siguiente versión de su operación.",
+        formTitle: "Iniciar conversación",
+        fields: {
+          name: "Nombre",
+          company: "Empresa",
+          email: "Correo electrónico",
+          need: "¿Qué necesita resolver?",
+          submit: "Enviar solicitud",
+        },
+        officesTitle: "Cobertura",
+        offices: [
+          ["LATAM", "Soporte para iniciativas regionales y operaciones de transformación."],
+          ["US Market", "Posicionamiento para engagement ejecutivo y delivery transfronterizo."],
+          ["Multilingual", "Experiencia preparada para inglés, español y portugués."],
+        ],
+      },
+      footer: {
+        note: "Sitio corporativo conceptual · versión inicial multilingual",
+        cta: "Explorar VOGARA NOVA",
+      },
+    },
+    en: {
+      brand: "VOGARA NOVA",
+      tagline: "Advisory · Delivery · Transformation",
+      nav: {
+        home: "Home",
+        about: "About",
+        services: "Services",
+        methodology: "Methodology",
+        contact: "Contact",
+      },
+      langLabel: "Language",
+      langNames: { es: "ES", en: "EN", pt: "PT" },
+      heroBadge: "Premium transformation operating model",
+      heroTitleBefore: "Delivery excellence with a",
+      heroTitleAccent: " premium operating system",
+      heroTitleAfter: " for modern transformation.",
+      heroText:
+        "VOGARA NOVA combines advisory strength, disciplined execution, and AI-enabled governance to bring clarity, control, and measurable business outcomes to complex initiatives.",
+      heroPrimary: "Book an executive conversation",
+      heroSecondary: "Explore services",
+      homeStats: [
+        { value: "Executive", label: "Visibility first" },
+        { value: "AI", label: "Enabled governance" },
+        { value: "End-to-End", label: "From advisory to adoption" },
+      ],
+      home: {
+        operatingLabel: "Operating model",
+        operatingTitle: "Advisory + Delivery + AI Governance",
+        operatingBadge: "Nova",
+        operatingCards: [
+          ["Executive visibility", "Real control over scope, progress, risks, and outcomes"],
+          ["Structured delivery", "A repeatable framework tailored for complex implementations"],
+          ["Scalable enablement", "Methods, assets, and controls that grow with the client"],
+        ],
+        servicesEyebrow: "Capabilities",
+        servicesTitle: "Services designed for high-stakes initiatives.",
+        servicesText:
+          "We do not sell strategy slides alone. We design, structure, and execute transformation with a delivery standard that protects value and builds executive confidence.",
+        services: [
+          {
+            icon: Layers3,
+            title: "Transformation Delivery",
+            description:
+              "End-to-end implementation leadership for CRM, customer operations, service, and digital transformation programs.",
+          },
+          {
+            icon: Sparkles,
+            title: "AI-Governed Execution",
+            description:
+              "Operational rigor enhanced by AI-driven governance, delivery controls, business outcome tracking, and scalable ways of working.",
+          },
+          {
+            icon: Compass,
+            title: "Advisory & Pre-Sales Structuring",
+            description:
+              "From opportunity shaping and solution framing to scope protection, delivery planning, and executive alignment.",
+          },
+          {
+            icon: Shield,
+            title: "Platform Enablement",
+            description:
+              "Support for Salesforce, Microsoft, and modern custom application ecosystems with a practical, execution-first mindset.",
+          },
+        ],
+        gainsEyebrow: "What clients gain",
+        gainsTitle: "Less delivery noise. More control. Better outcomes.",
+        gainsText:
+          "VOGARA NOVA helps leadership teams move from fragmented execution to a more structured, visible, and scalable transformation model without sacrificing pace or executive confidence.",
+        gains: [
+          "Stronger scope protection",
+          "Healthier delivery governance",
+          "More predictable implementation outcomes",
+          "Better stakeholder confidence",
+        ],
+      },
+      about: {
+        eyebrow: "About",
+        title: "A firm built to elevate how transformation is designed and executed.",
+        intro:
+          "VOGARA NOVA was created with a clear vision: combine executive-level advisory, operating discipline, and a modern governance framework so transformation no longer depends on improvisation.",
+        pillars: [
+          {
+            title: "Strategic clarity",
+            text: "We help define the problem, scope, critical decisions, and execution path before complexity turns into cost.",
+          },
+          {
+            title: "Operational discipline",
+            text: "We install a way of working that enables speed with control, without turning governance into bureaucracy.",
+          },
+          {
+            title: "Premium experience",
+            text: "Every interaction, artifact, and conversation should communicate sophistication, precision, and confidence to the client.",
+          },
+        ],
+        focusTitle: "Where we create the most value",
+        focusItems: [
+          "Enterprise transformation programs",
+          "CRM and service platform implementations",
+          "Structured pre-sales and scope protection",
+          "Delivery governance and adoption",
+          "Growing implementation firms",
+          "AI-supported operating models",
+        ],
+      },
+      servicesPage: {
+        eyebrow: "Services",
+        title: "A service offering built to support the journey from shaping through adoption.",
+        intro:
+          "Our portfolio prioritizes clarity, control, and execution. Each service exists to reduce ambiguity, protect program value, and improve the end-client experience.",
+        cards: [
+          {
+            icon: Compass,
+            title: "Advisory & Pre-Sales",
+            bullets: [
+              "Opportunity structuring and executive discovery",
+              "Stakeholder alignment and solution vision",
+              "Scope protection, assumptions, and risks",
+              "Strong sales-to-delivery handoff",
+            ],
+          },
+          {
+            icon: Layers3,
+            title: "Transformation Delivery",
+            bullets: [
+              "Integrated program leadership",
+              "Governance of work, risks, and decisions",
+              "Multi-team and multi-workstream coordination",
+              "Progress tracking toward business outcomes",
+            ],
+          },
+          {
+            icon: Workflow,
+            title: "Operating Model Design",
+            bullets: [
+              "Delivery framework and playbook design",
+              "Process and artifact standardization",
+              "Executive visibility and control models",
+              "Scalability for growth-stage firms",
+            ],
+          },
+          {
+            icon: Sparkles,
+            title: "AI-Enabled Governance",
+            bullets: [
+              "Operational control automation",
+              "Decision and risk traceability",
+              "Governance and reporting support",
+              "Intelligence layers for disciplined execution",
+            ],
+          },
+        ],
+        modelsTitle: "Engagement models",
+        models: [
+          ["Strategic Advisory", "For moments that demand definition, prioritization, and critical decision support."],
+          ["Delivery Leadership", "For programs that require strong operating direction and continuous executive partnership."],
+          ["Operating System Buildout", "For organizations that need to formalize how they sell and deliver transformation."],
+        ],
+      },
+      methodology: {
+        eyebrow: "Methodology",
+        title: "A methodology that connects shaping, delivery, governance, and adoption.",
+        intro:
+          "Our methodology is designed to reduce friction between strategy and execution. It is not only about phases, but about a transformation operating system.",
+        phases: [
+          {
+            label: "01",
+            title: "Shape",
+            text: "Define the opportunity, align stakeholders, structure scope, and create a delivery path that protects value from day one.",
+          },
+          {
+            label: "02",
+            title: "Build",
+            text: "Execute with operational clarity, governance, quality control, and transparent progress tracking across teams and workstreams.",
+          },
+          {
+            label: "03",
+            title: "Adopt",
+            text: "Drive readiness, activation, user confidence, and measurable business outcomes beyond the technical go-live.",
+          },
+        ],
+        governanceTitle: "Governance layers",
+        governance: [
+          "Executive visibility into progress, risk, and value",
+          "Decision controls and scope protection",
+          "Outcome-oriented tracking, not activity-only reporting",
+          "Operational discipline reinforced by AI when it adds value",
+        ],
+        differentiatorsTitle: "What makes it different",
+        differentiators: [
+          "Connects pre-sales and delivery without a break",
+          "Designed for real complexity, not consulting theory",
+          "Scales while maintaining control and a premium experience",
+          "Creates a strong base for modern operating models",
+        ],
+      },
+      contact: {
+        eyebrow: "Contact",
+        title: "Let’s talk about the next stage of your transformation.",
+        intro:
+          "If you need stronger control, better structuring, or a higher delivery standard, VOGARA NOVA can help you design the next version of your operating model.",
+        formTitle: "Start the conversation",
+        fields: {
+          name: "Name",
+          company: "Company",
+          email: "Email",
+          need: "What do you need to solve?",
+          submit: "Send request",
+        },
+        officesTitle: "Coverage",
+        offices: [
+          ["LATAM", "Support for regional initiatives and transformation operations."],
+          ["US Market", "Positioned for executive engagement and cross-border delivery."],
+          ["Multilingual", "Experience prepared for English, Spanish, and Portuguese."],
+        ],
+      },
+      footer: {
+        note: "Conceptual corporate website · initial multilingual version",
+        cta: "Explore VOGARA NOVA",
+      },
+    },
+    pt: {
+      brand: "VOGARA NOVA",
+      tagline: "Advisory · Delivery · Transformation",
+      nav: {
+        home: "Início",
+        about: "Sobre",
+        services: "Serviços",
+        methodology: "Metodologia",
+        contact: "Contato",
+      },
+      langLabel: "Idioma",
+      langNames: { es: "ES", en: "EN", pt: "PT" },
+      heroBadge: "Modelo premium de transformação",
+      heroTitleBefore: "Excelência em delivery com um",
+      heroTitleAccent: " sistema operacional premium",
+      heroTitleAfter: " para a transformação moderna.",
+      heroText:
+        "A VOGARA NOVA combina força consultiva, execução disciplinada e governança habilitada por IA para trazer clareza, controle e resultados de negócio mensuráveis para iniciativas complexas.",
+      heroPrimary: "Agendar conversa executiva",
+      heroSecondary: "Explorar serviços",
+      homeStats: [
+        { value: "Executivo", label: "Visibilidade primeiro" },
+        { value: "IA", label: "Governança habilitada" },
+        { value: "End-to-End", label: "De advisory à adoção" },
+      ],
+      home: {
+        operatingLabel: "Modelo operacional",
+        operatingTitle: "Advisory + Delivery + Governança com IA",
+        operatingBadge: "Nova",
+        operatingCards: [
+          ["Visibilidade executiva", "Controle real sobre escopo, progresso, riscos e resultados"],
+          ["Delivery estruturado", "Um framework repetível desenhado para implementações complexas"],
+          ["Habilitação escalável", "Métodos, ativos e controles que crescem com o cliente"],
+        ],
+        servicesEyebrow: "Capacidades",
+        servicesTitle: "Serviços desenhados para iniciativas de alta exigência.",
+        servicesText:
+          "Não vendemos apenas estratégia em slides. Desenhamos, estruturamos e executamos transformação com um padrão de delivery que protege valor e gera confiança executiva.",
+        services: [
+          {
+            icon: Layers3,
+            title: "Delivery de Transformação",
+            description:
+              "Liderança end-to-end para implementações de CRM, operações de serviço, experiência do cliente e programas de transformação digital.",
+          },
+          {
+            icon: Sparkles,
+            title: "Execução Governada por IA",
+            description:
+              "Rigor operacional reforçado por governança orientada por IA, controles de delivery, acompanhamento de resultados de negócio e formas de trabalho escaláveis.",
+          },
+          {
+            icon: Compass,
+            title: "Advisory e Estruturação de Pre-Sales",
+            description:
+              "Do desenho da oportunidade e enquadramento da solução até a proteção do escopo, o planejamento do delivery e o alinhamento executivo.",
+          },
+          {
+            icon: Shield,
+            title: "Habilitação de Plataformas",
+            description:
+              "Suporte para ecossistemas Salesforce, Microsoft e aplicações modernas sob medida com uma mentalidade prática e orientada à execução.",
+          },
+        ],
+        gainsEyebrow: "O que os clientes ganham",
+        gainsTitle: "Menos ruído no delivery. Mais controle. Melhores resultados.",
+        gainsText:
+          "A VOGARA NOVA ajuda equipes de liderança a sair de uma execução fragmentada para um modelo de transformação mais estruturado, visível e escalável, sem sacrificar velocidade nem confiança executiva.",
+        gains: [
+          "Maior proteção de escopo",
+          "Governança de delivery mais saudável",
+          "Resultados de implementação mais previsíveis",
+          "Maior confiança dos stakeholders",
+        ],
+      },
+      about: {
+        eyebrow: "Sobre",
+        title: "Uma empresa construída para elevar a forma como a transformação é desenhada e executada.",
+        intro:
+          "A VOGARA NOVA nasce com uma visão clara: combinar advisory em nível executivo, disciplina operacional e um framework moderno de governança para que a transformação deixe de depender de improviso.",
+        pillars: [
+          {
+            title: "Clareza estratégica",
+            text: "Ajudamos a definir melhor o problema, o escopo, as decisões críticas e o caminho de execução antes que a complexidade se transforme em custo.",
+          },
+          {
+            title: "Disciplina operacional",
+            text: "Instalamos uma forma de trabalho que permite velocidade com controle, sem transformar governança em burocracia.",
+          },
+          {
+            title: "Experiência premium",
+            text: "Cada interação, artefato e conversa deve transmitir sofisticação, precisão e confiança ao cliente.",
+          },
+        ],
+        focusTitle: "Onde geramos mais valor",
+        focusItems: [
+          "Programas de transformação empresarial",
+          "Implementações de CRM e plataformas de serviço",
+          "Pre-sales estruturado e proteção de escopo",
+          "Governança de delivery e adoção",
+          "Empresas de implementação em crescimento",
+          "Modelos operacionais com suporte de IA",
+        ],
+      },
+      servicesPage: {
+        eyebrow: "Serviços",
+        title: "Uma oferta de serviços construída para apoiar a jornada do shaping até a adoção.",
+        intro:
+          "Nosso portfólio prioriza clareza, controle e execução. Cada serviço existe para reduzir ambiguidade, proteger o valor do programa e melhorar a experiência do cliente final.",
+        cards: [
+          {
+            icon: Compass,
+            title: "Advisory & Pre-Sales",
+            bullets: [
+              "Estruturação de oportunidades e discovery executivo",
+              "Alinhamento de stakeholders e visão de solução",
+              "Proteção de escopo, premissas e riscos",
+              "Handoff sólido de vendas para delivery",
+            ],
+          },
+          {
+            icon: Layers3,
+            title: "Transformation Delivery",
+            bullets: [
+              "Liderança integrada de programa",
+              "Governança de trabalho, riscos e decisões",
+              "Coordenação multi-time e multi-workstream",
+              "Acompanhamento rumo aos resultados de negócio",
+            ],
+          },
+          {
+            icon: Workflow,
+            title: "Operating Model Design",
+            bullets: [
+              "Desenho de frameworks e playbooks de delivery",
+              "Padronização de processos e artefatos",
+              "Modelos de visibilidade e controle executivo",
+              "Escalabilidade para empresas em crescimento",
+            ],
+          },
+          {
+            icon: Sparkles,
+            title: "AI-Enabled Governance",
+            bullets: [
+              "Automação de controles operacionais",
+              "Rastreabilidade de decisões e riscos",
+              "Suporte a governança e reporting",
+              "Camadas de inteligência para execução disciplinada",
+            ],
+          },
+        ],
+        modelsTitle: "Modelos de engajamento",
+        models: [
+          ["Strategic Advisory", "Para momentos que exigem definição, priorização e suporte a decisões críticas."],
+          ["Delivery Leadership", "Para programas que exigem direção operacional forte e parceria executiva contínua."],
+          ["Operating System Buildout", "Para organizações que precisam formalizar como vendem e entregam transformação."],
+        ],
+      },
+      methodology: {
+        eyebrow: "Metodologia",
+        title: "Uma metodologia que conecta shaping, delivery, governança e adoção.",
+        intro:
+          "Nossa metodologia foi pensada para reduzir fricção entre estratégia e execução. Não se trata apenas de fases, mas de um sistema operacional de transformação.",
+        phases: [
+          {
+            label: "01",
+            title: "Estruturar",
+            text: "Definir a oportunidade, alinhar stakeholders, estruturar o escopo e criar um caminho de delivery que proteja o valor desde o primeiro dia.",
+          },
+          {
+            label: "02",
+            title: "Construir",
+            text: "Executar com clareza operacional, governança, controle de qualidade e acompanhamento transparente do progresso entre equipes e workstreams.",
+          },
+          {
+            label: "03",
+            title: "Adotar",
+            text: "Impulsionar readiness, ativação, confiança do usuário e resultados de negócio mensuráveis além do go-live técnico.",
+          },
+        ],
+        governanceTitle: "Camadas de governança",
+        governance: [
+          "Visibilidade executiva sobre progresso, risco e valor",
+          "Controles de decisão e proteção de escopo",
+          "Acompanhamento orientado por outcomes, não apenas por atividades",
+          "Disciplina operacional reforçada por IA quando agrega valor",
+        ],
+        differentiatorsTitle: "O que a torna diferente",
+        differentiators: [
+          "Conecta pre-sales e delivery sem ruptura",
+          "Foi desenhada para complexidade real, não para teoria de consultoria",
+          "Escala mantendo controle e experiência premium",
+          "Cria uma base forte para modelos operacionais modernos",
+        ],
+      },
+      contact: {
+        eyebrow: "Contato",
+        title: "Vamos conversar sobre a próxima etapa da sua transformação.",
+        intro:
+          "Se você precisa de maior controle, melhor estruturação ou um padrão mais alto de delivery, a VOGARA NOVA pode ajudar a desenhar a próxima versão do seu modelo operacional.",
+        formTitle: "Iniciar conversa",
+        fields: {
+          name: "Nome",
+          company: "Empresa",
+          email: "E-mail",
+          need: "O que você precisa resolver?",
+          submit: "Enviar solicitação",
+        },
+        officesTitle: "Cobertura",
+        offices: [
+          ["LATAM", "Suporte para iniciativas regionais e operações de transformação."],
+          ["US Market", "Posicionamento para relacionamento executivo e delivery transfronteiriço."],
+          ["Multilingual", "Experiência preparada para inglês, espanhol e português."],
+        ],
+      },
+      footer: {
+        note: "Site corporativo conceitual · versão inicial multilíngue",
+        cta: "Explorar VOGARA NOVA",
+      },
+    },
+  } as const;
+
+  const t = content[locale];
+
+  const pages = useMemo(
+    () => [
+      { key: "home" as Page, label: t.nav.home },
+      { key: "about" as Page, label: t.nav.about },
+      { key: "services" as Page, label: t.nav.services },
+      { key: "methodology" as Page, label: t.nav.methodology },
+      { key: "contact" as Page, label: t.nav.contact },
+    ],
+    [t],
+  );
+
+  useEffect(() => {
+    const savedLocale = window.localStorage.getItem("vogara-locale") as Locale | null;
+    if (savedLocale && ["es", "en", "pt"].includes(savedLocale)) {
+      setLocale(savedLocale);
+    }
+
+    const hash = window.location.hash.replace("#", "") as Page;
+    if (["home", "about", "services", "methodology", "contact"].includes(hash)) {
+      setPage(hash);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("vogara-locale", locale);
+  }, [locale]);
+
+  useEffect(() => {
+    window.location.hash = page;
+    setMobileMenuOpen(false);
+  }, [page]);
+
+  const navigate = (nextPage: Page) => setPage(nextPage);
+
+  const SectionHeader = ({ eyebrow, title, text }: { eyebrow: string; title: string; text: string }) => (
+    <div className="max-w-3xl">
+      <p className="text-sm uppercase tracking-[0.3em] text-[#B98B43]">{eyebrow}</p>
+      <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#2B2118] md:text-5xl">{title}</h2>
+      <p className="mt-5 text-lg leading-8 text-[#6F6254]">{text}</p>
+    </div>
+  );
+
+  const PageButton = ({ item }: { item: { key: Page; label: string } }) => (
+    <button
+      type="button"
+      onClick={() => navigate(item.key)}
+      className={`rounded-xl px-4 py-2 text-sm font-medium transition ${
+        page === item.key
+          ? "bg-[#F4E7D2] text-[#2B2118]"
+          : "text-[#6F6254] hover:bg-[#FAF2E5] hover:text-[#2B2118]"
+      }`}
+    >
+      {item.label}
+    </button>
+  );
+
+  const HomePage = () => (
+    <>
+      <section className="relative border-b border-[#E8D8BF]/70">
+        <div className="mx-auto grid max-w-7xl gap-14 px-6 pb-24 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-32 lg:pt-16">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#D9BE93] bg-white/85 px-4 py-2 text-xs uppercase tracking-[0.28em] text-[#B98B43] shadow-[0_10px_30px_rgba(201,160,103,0.12)] backdrop-blur-xl">
+              <Sparkles className="h-3.5 w-3.5" />
+              {t.heroBadge}
+            </div>
+
+            <h1 className="max-w-5xl text-5xl font-semibold leading-tight tracking-[-0.04em] text-[#2B2118] md:text-6xl xl:text-7xl">
+              {t.heroTitleBefore}
+              <span className="bg-[linear-gradient(135deg,#9F7233,#D4B37A,#F1E4CB)] bg-clip-text text-transparent">{t.heroTitleAccent}</span>
+              {t.heroTitleAfter}
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6F6254] md:text-xl">{t.heroText}</p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <button
+                type="button"
+                onClick={() => navigate("contact")}
+                className="group inline-flex items-center justify-center gap-2 rounded-2xl border border-[#D0A563] bg-[linear-gradient(135deg,#C99A5E,#E3C495)] px-6 py-4 text-sm font-semibold text-[#2B2118] shadow-[0_14px_35px_rgba(201,160,103,0.22)] transition hover:-translate-y-0.5"
+              >
+                {t.heroPrimary}
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate("services")}
+                className="rounded-2xl border border-[#DFC9A6] bg-white/90 px-6 py-4 text-center text-sm font-semibold text-[#5A4938] shadow-[0_8px_24px_rgba(0,0,0,0.04)] backdrop-blur-xl transition hover:bg-[#FFF9F0]"
+              >
+                {t.heroSecondary}
+              </button>
+            </div>
+
+            <div className="mt-12 grid gap-4 sm:grid-cols-3">
+              {t.homeStats.map((item) => (
+                <div
+                  key={`${item.value}-${item.label}`}
+                  className="rounded-[1.75rem] border border-[#E9DCC8] bg-white/88 p-5 shadow-[0_20px_40px_rgba(56,35,15,0.05)] backdrop-blur-xl"
+                >
+                  <p className="text-base font-semibold text-[#2B2118]">{item.value}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#7B6C5C]">{item.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="absolute -inset-6 rounded-[2.5rem] bg-[radial-gradient(circle,rgba(212,179,122,0.28),transparent_58%)] blur-2xl" />
+            <div className="relative rounded-[2rem] border border-[#E8D8BF] bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(250,243,232,0.92))] p-4 shadow-[0_30px_80px_rgba(104,73,33,0.10)] backdrop-blur-2xl">
+              <div className="rounded-[1.6rem] border border-[#E9DCC8] bg-[#FFFDF9]/95 p-7">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-[#A88A63]">{t.home.operatingLabel}</p>
+                    <h3 className="mt-2 text-2xl font-semibold text-[#2B2118]">{t.home.operatingTitle}</h3>
+                  </div>
+                  <div className="rounded-2xl border border-[#D8BD91] bg-[#FBF2E4] px-3 py-2 text-xs uppercase tracking-[0.18em] text-[#A77B3F]">
+                    {t.home.operatingBadge}
+                  </div>
+                </div>
+
+                <div className="mt-8 space-y-4">
+                  {t.home.operatingCards.map(([title, text]) => (
+                    <div key={title} className="rounded-2xl border border-[#EEE2D1] bg-white/90 p-4 backdrop-blur-xl">
+                      <div className="flex items-start gap-3">
+                        <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-xl bg-[#F7E7CF] text-[#B78948]">
+                          <CheckCircle2 className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-[#2B2118]">{title}</p>
+                          <p className="mt-1 text-sm leading-6 text-[#7B6C5C]">{text}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <SectionHeader eyebrow={t.home.servicesEyebrow} title={t.home.servicesTitle} text={t.home.servicesText} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {t.home.services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={service.title}
+                className="group rounded-[2rem] border border-[#E9DCC8] bg-white/88 p-7 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl transition hover:-translate-y-1 hover:border-[#D9BE93] hover:bg-[#FFF9F0]"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#E1C8A2] bg-[#F8E9D2] text-[#B78948]">
+                  <Icon className="h-5 w-5" />
+                </div>
+                <h3 className="mt-5 text-xl font-semibold text-[#2B2118]">{service.title}</h3>
+                <p className="mt-3 text-base leading-7 text-[#6F6254]">{service.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="border-t border-[#E8D8BF]/70 bg-[linear-gradient(180deg,rgba(255,252,247,0.98),rgba(247,239,226,0.90))]">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="rounded-[2rem] border border-[#E7D6BC] bg-white/88 p-8 shadow-[0_24px_80px_rgba(104,73,33,0.08)] backdrop-blur-2xl md:p-12">
+            <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-[#B98B43]">{t.home.gainsEyebrow}</p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-[#2B2118] md:text-5xl">{t.home.gainsTitle}</h2>
+                <p className="mt-5 max-w-2xl text-lg leading-8 text-[#6F6254]">{t.home.gainsText}</p>
+              </div>
+              <div className="grid gap-4">
+                {t.home.gains.map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-[#EADCC8] bg-[#FFFDF8] px-5 py-4 text-[#544638] shadow-[0_8px_24px_rgba(0,0,0,0.03)] backdrop-blur-xl"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+
+  const AboutPage = () => (
+    <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <SectionHeader eyebrow={t.about.eyebrow} title={t.about.title} text={t.about.intro} />
+
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
+        {t.about.pillars.map((pillar, index) => (
+          <div
+            key={pillar.title}
+            className="rounded-[2rem] border border-[#E9DCC8] bg-white/88 p-7 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl"
+          >
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#E1C8A2] bg-[#F8E9D2] text-[#B78948]">
+              <span className="text-sm font-semibold">0{index + 1}</span>
+            </div>
+            <h3 className="mt-5 text-xl font-semibold text-[#2B2118]">{pillar.title}</h3>
+            <p className="mt-3 text-base leading-7 text-[#6F6254]">{pillar.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-14 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="rounded-[2rem] border border-[#E9DCC8] bg-[#FFFDF8] p-8 shadow-[0_20px_50px_rgba(104,73,33,0.06)] backdrop-blur-xl">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#E1C8A2] bg-[#F8E9D2] text-[#B78948]">
+            <Target className="h-5 w-5" />
+          </div>
+          <h3 className="mt-5 text-2xl font-semibold text-[#2B2118]">{t.about.focusTitle}</h3>
+          <div className="mt-6 grid gap-3">
+            {t.about.focusItems.map((item) => (
+              <div key={item} className="rounded-2xl border border-[#EEE2D1] bg-white/92 px-4 py-4 text-[#544638]">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-[#E7D6BC] bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(248,236,213,0.72))] p-8 shadow-[0_20px_60px_rgba(104,73,33,0.08)] backdrop-blur-xl">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#B98B43]">VOGARA NOVA</p>
+          <h3 className="mt-5 text-3xl font-semibold tracking-[-0.03em] text-[#2B2118]">
+            Premium by design. Disciplined by operating model.
+          </h3>
+          <p className="mt-5 text-lg leading-8 text-[#6F6254]">
+            {locale === "es"
+              ? "La propuesta de VOGARA NOVA no es solamente estética. El look and feel premium está alineado a una expectativa operativa: decisiones más claras, artefactos más sólidos, mejor control y una experiencia más confiable para el cliente."
+              : locale === "en"
+                ? "VOGARA NOVA’s proposition is not only visual. The premium look and feel is aligned with an operating expectation: clearer decisions, stronger artifacts, better control, and a more trustworthy client experience."
+                : "A proposta da VOGARA NOVA não é apenas visual. O look and feel premium está alinhado a uma expectativa operacional: decisões mais claras, artefatos mais sólidos, melhor controle e uma experiência mais confiável para o cliente."}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+
+  const ServicesPage = () => (
+    <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <SectionHeader eyebrow={t.servicesPage.eyebrow} title={t.servicesPage.title} text={t.servicesPage.intro} />
+
+      <div className="mt-14 grid gap-6 md:grid-cols-2">
+        {t.servicesPage.cards.map((card) => {
+          const Icon = card.icon;
+          return (
+            <div
+              key={card.title}
+              className="rounded-[2rem] border border-[#E9DCC8] bg-white/88 p-8 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl"
+            >
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#E1C8A2] bg-[#F8E9D2] text-[#B78948]">
+                <Icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-5 text-2xl font-semibold text-[#2B2118]">{card.title}</h3>
+              <div className="mt-6 grid gap-3">
+                {card.bullets.map((bullet) => (
+                  <div key={bullet} className="rounded-2xl border border-[#EEE2D1] bg-[#FFFDF8] px-4 py-4 text-[#544638]">
+                    {bullet}
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="mt-14 rounded-[2rem] border border-[#E7D6BC] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(248,236,213,0.65))] p-8 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl md:p-10">
+        <h3 className="text-2xl font-semibold text-[#2B2118]">{t.servicesPage.modelsTitle}</h3>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {t.servicesPage.models.map(([title, text]) => (
+            <div key={title} className="rounded-2xl border border-[#E9DCC8] bg-white/88 p-5">
+              <p className="font-semibold text-[#2B2118]">{title}</p>
+              <p className="mt-2 text-sm leading-6 text-[#6F6254]">{text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+
+  const MethodologyPage = () => (
+    <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <SectionHeader eyebrow={t.methodology.eyebrow} title={t.methodology.title} text={t.methodology.intro} />
+
+      <div className="mt-14 grid gap-6 md:grid-cols-3">
+        {t.methodology.phases.map((phase) => (
+          <div
+            key={phase.label}
+            className="rounded-[2rem] border border-[#E7D6BC] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(248,236,213,0.72))] p-7 shadow-[0_18px_50px_rgba(104,73,33,0.06)] backdrop-blur-xl"
+          >
+            <p className="text-sm font-semibold text-[#B98B43]">{phase.label}</p>
+            <h3 className="mt-3 text-2xl font-semibold text-[#2B2118]">{phase.title}</h3>
+            <p className="mt-3 text-base leading-7 text-[#6F6254]">{phase.text}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="rounded-[2rem] border border-[#E9DCC8] bg-white/88 p-8 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl">
+          <h3 className="text-2xl font-semibold text-[#2B2118]">{t.methodology.governanceTitle}</h3>
+          <div className="mt-6 grid gap-3">
+            {t.methodology.governance.map((item) => (
+              <div key={item} className="rounded-2xl border border-[#EEE2D1] bg-[#FFFDF8] px-4 py-4 text-[#544638]">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-[#E9DCC8] bg-white/88 p-8 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl">
+          <h3 className="text-2xl font-semibold text-[#2B2118]">{t.methodology.differentiatorsTitle}</h3>
+          <div className="mt-6 grid gap-3">
+            {t.methodology.differentiators.map((item) => (
+              <div key={item} className="rounded-2xl border border-[#EEE2D1] bg-[#FFFDF8] px-4 py-4 text-[#544638]">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  const ContactPage = () => (
+    <section className="mx-auto max-w-7xl px-6 py-20 md:py-24">
+      <SectionHeader eyebrow={t.contact.eyebrow} title={t.contact.title} text={t.contact.intro} />
+
+      <div className="mt-14 grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="rounded-[2rem] border border-[#E9DCC8] bg-white/88 p-8 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl">
+          <h3 className="text-2xl font-semibold text-[#2B2118]">{t.contact.formTitle}</h3>
+          <div className="mt-6 grid gap-4">
+            <input
+              placeholder={t.contact.fields.name}
+              className="rounded-2xl border border-[#E5D4BA] bg-[#FFFDF8] px-4 py-4 text-[#2B2118] outline-none placeholder:text-[#A18F7B] focus:border-[#D0A563]"
+            />
+            <input
+              placeholder={t.contact.fields.company}
+              className="rounded-2xl border border-[#E5D4BA] bg-[#FFFDF8] px-4 py-4 text-[#2B2118] outline-none placeholder:text-[#A18F7B] focus:border-[#D0A563]"
+            />
+            <input
+              placeholder={t.contact.fields.email}
+              className="rounded-2xl border border-[#E5D4BA] bg-[#FFFDF8] px-4 py-4 text-[#2B2118] outline-none placeholder:text-[#A18F7B] focus:border-[#D0A563]"
+            />
+            <textarea
+              placeholder={t.contact.fields.need}
+              rows={6}
+              className="rounded-2xl border border-[#E5D4BA] bg-[#FFFDF8] px-4 py-4 text-[#2B2118] outline-none placeholder:text-[#A18F7B] focus:border-[#D0A563]"
+            />
+            <button className="inline-flex items-center justify-center gap-2 rounded-2xl border border-[#D0A563] bg-[linear-gradient(135deg,#C99A5E,#E3C495)] px-6 py-4 text-sm font-semibold text-[#2B2118] shadow-[0_12px_35px_rgba(201,160,103,0.18)]">
+              {t.contact.fields.submit}
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
+        <div className="rounded-[2rem] border border-[#E7D6BC] bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(248,236,213,0.72))] p-8 shadow-[0_20px_60px_rgba(104,73,33,0.06)] backdrop-blur-xl">
+          <h3 className="text-2xl font-semibold text-[#2B2118]">{t.contact.officesTitle}</h3>
+          <div className="mt-6 grid gap-4">
+            {t.contact.offices.map(([title, text]) => (
+              <div key={title} className="rounded-2xl border border-[#E9DCC8] bg-white/88 p-5">
+                <p className="font-semibold text-[#2B2118]">{title}</p>
+                <p className="mt-2 text-sm leading-6 text-[#6F6254]">{text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+
+  const renderPage = () => {
+    switch (page) {
+      case "about":
+        return <AboutPage />;
+      case "services":
+        return <ServicesPage />;
+      case "methodology":
+        return <MethodologyPage />;
+      case "contact":
+        return <ContactPage />;
+      default:
+        return <HomePage />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FBF7F0] text-[#2B2118] selection:bg-[#E3C495] selection:text-[#2B2118]">
+      <div className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,179,122,0.20),transparent_28%),radial-gradient(circle_at_top_right,rgba(250,236,210,0.65),transparent_24%),radial-gradient(circle_at_50%_20%,rgba(255,255,255,0.85),transparent_35%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.72),transparent_18%,transparent_84%,rgba(248,236,213,0.30))]" />
+
+        <header className="sticky top-0 z-30 border-b border-[#E8D8BF]/70 bg-[#FFFCF7]/85 backdrop-blur-2xl">
+          <div className="mx-auto max-w-7xl px-6 py-5">
+            <div className="flex items-center justify-between gap-6">
+              <button type="button" onClick={() => navigate("home")} className="flex items-center gap-4 text-left">
+                <div className="flex h-12 w-12 items-center justify-center rounded-[1.1rem] border border-[#D9BE93] bg-[linear-gradient(145deg,rgba(255,255,255,0.95),rgba(244,227,198,0.88))] shadow-[0_10px_30px_rgba(201,160,103,0.16)] backdrop-blur-xl">
+                  <span className="bg-[linear-gradient(135deg,#8E652F,#C99A5E,#E6C992)] bg-clip-text text-lg font-semibold text-transparent">V</span>
+                </div>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.42em] text-[#9F7A47]">{t.brand}</p>
+                  <p className="text-sm text-[#7A6A58]">{t.tagline}</p>
+                </div>
+              </button>
+
+              <div className="hidden items-center gap-2 lg:flex">
+                {pages.map((item) => (
+                  <PageButton key={item.key} item={item} />
+                ))}
+              </div>
+
+              <div className="hidden items-center gap-3 lg:flex">
+                <div className="flex items-center gap-2 rounded-2xl border border-[#E5D4BA] bg-white/85 p-2 shadow-[0_8px_24px_rgba(0,0,0,0.04)] backdrop-blur-xl">
+                  <div className="flex items-center gap-2 px-2 text-xs uppercase tracking-[0.22em] text-[#B98B43]">
+                    <Globe2 className="h-4 w-4" />
+                    {t.langLabel}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {(["es", "en", "pt"] as Locale[]).map((lang) => (
+                      <button
+                        key={lang}
+                        type="button"
+                        onClick={() => setLocale(lang)}
+                        className={`rounded-xl px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition ${
+                          locale === lang
+                            ? "bg-[linear-gradient(135deg,#C99A5E,#E3C495)] text-[#2B2118]"
+                            : "text-[#6F6254] hover:bg-[#FAF2E5] hover:text-[#2B2118]"
+                        }`}
+                      >
+                        {t.langNames[lang]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => navigate("contact")}
+                  className="rounded-2xl border border-[#D0A563] bg-[linear-gradient(135deg,#C99A5E,#E3C495)] px-5 py-3 text-sm font-semibold text-[#2B2118] shadow-[0_12px_35px_rgba(201,160,103,0.16)]"
+                >
+                  {t.nav.contact}
+                </button>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#E5D4BA] bg-white/88 text-[#5A4938] lg:hidden"
+              >
+                {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
+
+            {mobileMenuOpen && (
+              <div className="mt-4 rounded-[1.75rem] border border-[#E7D6BC] bg-[#FFFDF8]/95 p-4 shadow-[0_16px_40px_rgba(104,73,33,0.08)] lg:hidden">
+                <div className="grid gap-2">
+                  {pages.map((item) => (
+                    <button
+                      key={item.key}
+                      type="button"
+                      onClick={() => navigate(item.key)}
+                      className={`rounded-2xl px-4 py-3 text-left text-sm font-medium transition ${
+                        page === item.key
+                          ? "bg-[#F4E7D2] text-[#2B2118]"
+                          : "text-[#6F6254] hover:bg-[#FAF2E5] hover:text-[#2B2118]"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-4 flex items-center justify-between rounded-2xl border border-[#E5D4BA] bg-white/85 p-2">
+                  <div className="flex items-center gap-2 px-2 text-xs uppercase tracking-[0.22em] text-[#B98B43]">
+                    <Globe2 className="h-4 w-4" />
+                    {t.langLabel}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    {(["es", "en", "pt"] as Locale[]).map((lang) => (
+                      <button
+                        key={lang}
+                        type="button"
+                        onClick={() => setLocale(lang)}
+                        className={`rounded-xl px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] transition ${
+                          locale === lang
+                            ? "bg-[linear-gradient(135deg,#C99A5E,#E3C495)] text-[#2B2118]"
+                            : "text-[#6F6254] hover:bg-[#FAF2E5] hover:text-[#2B2118]"
+                        }`}
+                      >
+                        {t.langNames[lang]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </header>
+
+        <main>{renderPage()}</main>
+
+        <footer className="border-t border-[#E8D8BF]/70 bg-[#FFFDF8]">
+          <div className="mx-auto flex max-w-7xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.42em] text-[#9F7A47]">{t.brand}</p>
+              <p className="mt-3 text-sm text-[#7A6A58]">{t.footer.note}</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => navigate("home")}
+              className="inline-flex items-center gap-2 rounded-2xl border border-[#E5D4BA] bg-white/88 px-5 py-3 text-sm font-semibold text-[#5A4938] shadow-[0_8px_24px_rgba(0,0,0,0.04)] backdrop-blur-xl"
+            >
+              {t.footer.cta}
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
+}
