@@ -1,0 +1,590 @@
+Perfect. Replit is the better route if you want more control and a cleaner long-term foundation.
+
+For this, the smartest approach is to create the Spanish master content first, then translate it into English and Portuguese once the structure is approved. That prevents rework and keeps the tone consistent.
+
+Below is a full first-version website content set for VOGARA, written for a premium, modern, executive-style site.
+
+⸻
+
+VOGARA — Website Content
+
+Master version in Spanish
+
+1) Main navigation
+	•	Inicio
+	•	Nosotros
+	•	Servicios
+	•	Capacidades
+	•	Contacto
+
+Optional CTA button in header:
+	•	Hablemos
+
+⸻
+
+2) Homepage
+
+Hero section
+
+Headline
+Transformamos estrategia en ejecución real.
+
+Subheadline
+En VOGARA ayudamos a las organizaciones a diseñar, gobernar y ejecutar iniciativas de transformación con mayor claridad, control y impacto en el negocio.
+
+Primary CTA
+Hablemos
+
+Secondary CTA
+Conoce nuestros servicios
+
+⸻
+
+Intro / positioning strip
+
+Short statement
+Estrategia, gobernanza y ejecución para organizaciones que necesitan avanzar con estructura, velocidad y confianza.
+
+⸻
+
+About preview section
+
+Section title
+Una firma enfocada en resultados, no solo en planes.
+
+Body copy
+VOGARA nace para ayudar a empresas que necesitan mucho más que recomendaciones de alto nivel. Combinamos visión estratégica, disciplina operativa y entendimiento profundo de la ejecución para convertir iniciativas complejas en resultados medibles.
+
+Trabajamos con organizaciones que buscan fortalecer su operación, acelerar su transformación digital, profesionalizar su capacidad de entrega y alinear tecnología con objetivos reales de negocio.
+
+⸻
+
+Services overview section
+
+Section title
+Nuestros servicios
+
+Section intro
+Acompañamos a nuestros clientes desde la definición de la estrategia hasta la puesta en marcha de capacidades, procesos y modelos de ejecución sostenibles.
+
+Service 1
+Title
+Technology Advisory
+
+Description
+Ayudamos a definir decisiones tecnológicas con criterio de negocio, priorización clara y una visión práctica de implementación.
+
+Service 2
+Title
+Digital Transformation
+
+Description
+Diseñamos iniciativas de transformación que conectan procesos, personas, tecnología y objetivos de negocio de forma coherente y ejecutable.
+
+Service 3
+Title
+Delivery Governance
+
+Description
+Establecemos estructuras de gobernanza, control, seguimiento y toma de decisiones para mejorar la ejecución y reducir el riesgo operativo.
+
+Service 4
+Title
+CRM & Platform Implementation Advisory
+
+Description
+Acompañamos programas de implementación y evolución de plataformas empresariales con foco en claridad funcional, adopción y valor real.
+
+Service 5
+Title
+AI-Enabled Operating Models
+
+Description
+Diseñamos modelos operativos que integran inteligencia artificial de forma práctica, responsable y alineada a resultados.
+
+Service 6
+Title
+PMO & Execution Strategy
+
+Description
+Fortalecemos la capacidad de planeación, seguimiento y ejecución a través de prácticas de PMO modernas y orientadas al negocio.
+
+⸻
+
+Why VOGARA section
+
+Section title
+¿Por qué VOGARA?
+
+Point 1
+Title
+Visión estratégica con enfoque práctico
+Text
+No nos quedamos en recomendaciones conceptuales. Diseñamos enfoques que pueden ejecutarse en el mundo real.
+
+Point 2
+Title
+Experiencia en gobernanza y entrega
+Text
+Ayudamos a ordenar iniciativas complejas, mejorar la visibilidad ejecutiva y fortalecer la disciplina de ejecución.
+
+Point 3
+Title
+Tecnología alineada al negocio
+Text
+Nuestra prioridad no es implementar por implementar, sino asegurar que cada decisión tecnológica tenga sentido para la operación y los objetivos de la organización.
+
+Point 4
+Title
+Capacidad para acompañar transformación real
+Text
+Trabajamos en la intersección entre estrategia, operación, cambio organizacional y habilitación tecnológica.
+
+⸻
+
+Capabilities / operating model section
+
+Section title
+Cómo trabajamos
+
+Body copy
+Nuestro enfoque combina diagnóstico, definición estratégica, estructuración operativa y acompañamiento en la ejecución. Esto nos permite ayudar a nuestros clientes no solo a definir hacia dónde ir, sino también a construir la disciplina necesaria para llegar.
+
+Three-column content
+
+Column 1
+Title
+Diagnóstico
+Text
+Evaluamos el estado actual, identificamos brechas y entendemos prioridades, riesgos y oportunidades.
+
+Column 2
+Title
+Diseño
+Text
+Definimos modelos, estructuras, procesos y rutas de trabajo que conectan estrategia con ejecución.
+
+Column 3
+Title
+Acompañamiento
+Text
+Apoyamos la implementación, la gobernanza y la adopción para asegurar continuidad y resultados sostenibles.
+
+⸻
+
+Industries / where we add value section
+
+Section title
+Dónde generamos valor
+
+Intro
+Nuestro enfoque es adaptable, pero solemos aportar un valor especialmente fuerte en entornos donde la ejecución, la gobernanza y la transformación requieren estructura y claridad.
+
+Items
+	•	Servicios financieros
+	•	Retail y consumo
+	•	Sector público
+	•	Servicios profesionales
+	•	Organizaciones en crecimiento y transformación
+
+⸻
+
+Closing CTA section
+
+Headline
+Cuando la transformación necesita estructura, VOGARA entra en acción.
+
+Body copy
+Si tu organización necesita mayor claridad estratégica, mejor gobernanza o una ejecución más sólida, conversemos.
+
+CTA button
+Contactar a VOGARA
+
+⸻
+
+3) About page
+
+Page hero
+
+Headline
+Sobre VOGARA
+
+Subheadline
+Ayudamos a las organizaciones a convertir ambición estratégica en capacidades reales de ejecución.
+
+⸻
+
+Who we are section
+
+Section title
+Quiénes somos
+
+Body copy
+VOGARA es una firma de advisory y transformación enfocada en ayudar a empresas a fortalecer su capacidad de ejecutar iniciativas estratégicas con mayor orden, visibilidad y efectividad.
+
+Nuestra propuesta combina pensamiento estratégico, disciplina operativa y una visión práctica de la tecnología como habilitador del negocio. Trabajamos con líderes y organizaciones que buscan evolucionar su operación, profesionalizar su gobierno de entrega y transformar la forma en que convierten planes en resultados.
+
+⸻
+
+What we believe section
+
+Section title
+Lo que creemos
+
+Body copy
+Creemos que muchas iniciativas fracasan no por falta de visión, sino por falta de estructura, alineación y disciplina de ejecución. Por eso, nuestro trabajo no se limita a recomendar. Ayudamos a definir, organizar y acompañar la transformación para que tenga sentido operativo y genere impacto real.
+
+⸻
+
+Our approach section
+
+Section title
+Nuestro enfoque
+
+Body copy
+En VOGARA trabajamos desde una lógica simple: claridad antes que complejidad, estructura antes que improvisación y ejecución antes que discurso. Diseñamos soluciones con una visión integral, considerando negocio, personas, procesos, tecnología y gobernanza como parte de un mismo sistema.
+
+⸻
+
+Principles section
+
+Section title
+Principios que nos definen
+
+Items
+
+Ejecución con propósito
+Cada iniciativa debe responder a una necesidad real del negocio.
+
+Claridad ejecutiva
+La transformación necesita visibilidad, criterio y capacidad de decisión.
+
+Diseño práctico
+Las soluciones deben ser viables, sostenibles y aterrizadas a la realidad de cada organización.
+
+Evolución continua
+La mejora no ocurre en un solo momento; se construye con disciplina y consistencia.
+
+⸻
+
+4) Services page
+
+Page hero
+
+Headline
+Servicios
+
+Subheadline
+Diseñamos y fortalecemos capacidades de estrategia, gobernanza y ejecución para organizaciones que necesitan avanzar con mayor control e impacto.
+
+⸻
+
+Service detail 1
+
+Title
+Technology Advisory
+
+Text
+Apoyamos la toma de decisiones tecnológicas desde una perspectiva estratégica y operativa. Ayudamos a evaluar opciones, definir prioridades, estructurar hojas de ruta y alinear inversiones tecnológicas con necesidades reales del negocio.
+
+⸻
+
+Service detail 2
+
+Title
+Digital Transformation
+
+Text
+Diseñamos iniciativas de transformación que integran procesos, personas y tecnología bajo una visión clara de valor. Nuestro enfoque busca evitar esfuerzos aislados y construir una evolución organizacional más coherente y sostenible.
+
+⸻
+
+Service detail 3
+
+Title
+Delivery Governance
+
+Text
+Establecemos modelos de gobernanza para que la ejecución tenga visibilidad, control y capacidad de respuesta. Esto incluye estructuras de seguimiento, gestión de riesgos, toma de decisiones, definición de roles y alineación entre áreas.
+
+⸻
+
+Service detail 4
+
+Title
+CRM & Platform Implementation Advisory
+
+Text
+Acompañamos programas de implementación y evolución de plataformas empresariales para asegurar claridad funcional, trazabilidad de alcance, foco en adopción y una ejecución más ordenada.
+
+⸻
+
+Service detail 5
+
+Title
+AI-Enabled Operating Models
+
+Text
+Ayudamos a incorporar inteligencia artificial en procesos y modelos operativos con una visión práctica y responsable. Priorizamos los casos de uso que realmente mejoran productividad, control, velocidad o calidad de decisión.
+
+⸻
+
+Service detail 6
+
+Title
+PMO & Execution Strategy
+
+Text
+Fortalecemos áreas de PMO y estructuras de ejecución para mejorar planeación, seguimiento, priorización, visibilidad ejecutiva y consistencia operativa en programas e iniciativas estratégicas.
+
+⸻
+
+Service closing section
+
+Headline
+No ofrecemos servicios aislados. Diseñamos capacidades conectadas.
+
+Body copy
+Nuestro valor está en entender cómo se relacionan estrategia, operación, tecnología y ejecución para construir soluciones que funcionen de manera integrada.
+
+⸻
+
+5) Capabilities page
+
+Page hero
+
+Headline
+Capacidades
+
+Subheadline
+Integramos advisory, gobernanza y ejecución para ayudar a nuestros clientes a operar mejor y transformar con mayor claridad.
+
+⸻
+
+Capability block 1
+
+Title
+Gobernanza de transformación
+Text
+Diseñamos mecanismos de seguimiento, control y toma de decisiones para iniciativas complejas.
+
+Capability block 2
+
+Title
+Modelos operativos
+Text
+Definimos estructuras, roles, flujos y prácticas para mejorar consistencia y efectividad operativa.
+
+Capability block 3
+
+Title
+Estrategia de ejecución
+Text
+Conectamos visión estratégica con un enfoque práctico de implementación y gestión.
+
+Capability block 4
+
+Title
+Adopción y madurez organizacional
+Text
+Ayudamos a las organizaciones a evolucionar sus prácticas y capacidades de forma sostenible.
+
+Capability block 5
+
+Title
+Habilitación tecnológica
+Text
+Aterrizamos decisiones tecnológicas dentro de un marco claro de negocio, procesos y operación.
+
+Capability block 6
+
+Title
+Integración de inteligencia artificial
+Text
+Identificamos oportunidades reales para incorporar IA sin perder control, enfoque ni sentido estratégico.
+
+⸻
+
+Closing statement
+
+Text
+Nuestro objetivo no es solo mejorar proyectos. Es ayudar a construir una organización con mayor capacidad para ejecutar, adaptarse y crecer.
+
+⸻
+
+6) Contact page
+
+Page hero
+
+Headline
+Contacto
+
+Subheadline
+Conversemos sobre cómo fortalecer la estrategia, la gobernanza y la ejecución de tu organización.
+
+⸻
+
+Intro text
+
+Body copy
+Si estás evaluando una iniciativa de transformación, buscando mayor control sobre la ejecución o explorando cómo estructurar mejor tus capacidades operativas y tecnológicas, en VOGARA podemos ayudarte.
+
+⸻
+
+Contact form labels
+	•	Nombre
+	•	Empresa
+	•	Cargo
+	•	Correo electrónico
+	•	Teléfono
+	•	País
+	•	¿Cómo podemos ayudarte?
+	•	Enviar mensaje
+
+⸻
+
+Contact form helper text
+
+Text
+Cuéntanos brevemente tu contexto, objetivo o necesidad. Nos pondremos en contacto contigo a la brevedad.
+
+⸻
+
+Contact side block
+
+Title
+Hablemos
+
+Text
+Estamos listos para conversar sobre iniciativas de advisory, transformación, gobernanza de entrega, evolución operativa y habilitación tecnológica.
+
+⸻
+
+7) Footer content
+
+Short brand statement
+VOGARA
+Strategy. Governance. Execution.
+
+Footer paragraph
+Ayudamos a las organizaciones a transformar con mayor claridad, estructura y capacidad de ejecución.
+
+Footer links
+	•	Inicio
+	•	Nosotros
+	•	Servicios
+	•	Capacidades
+	•	Contacto
+
+Legal line
+	•	© VOGARA. Todos los derechos reservados.
+
+⸻
+
+8) Microcopy / buttons / reusable UI text
+
+Buttons
+	•	Hablemos
+	•	Conoce más
+	•	Ver servicios
+	•	Contáctanos
+	•	Enviar mensaje
+
+Short trust lines
+	•	Estrategia con enfoque práctico
+	•	Gobernanza para ejecución real
+	•	Transformación con claridad y control
+	•	Tecnología alineada al negocio
+
+Contact confirmation message
+
+Title
+Gracias por contactarnos
+
+Text
+Hemos recibido tu mensaje y estaremos en contacto pronto.
+
+⸻
+
+9) SEO titles and meta descriptions
+
+Home
+
+Title
+VOGARA | Strategy, Governance & Execution
+
+Meta description
+VOGARA ayuda a las organizaciones a fortalecer estrategia, gobernanza y ejecución para impulsar transformaciones con claridad, estructura e impacto.
+
+About
+
+Title
+Sobre VOGARA | Advisory y Transformación
+
+Meta description
+Conoce a VOGARA, una firma enfocada en advisory, gobernanza y ejecución para organizaciones en transformación.
+
+Services
+
+Title
+Servicios | VOGARA
+
+Meta description
+Explora los servicios de VOGARA en advisory tecnológico, transformación digital, gobernanza de entrega, PMO y modelos operativos habilitados por IA.
+
+Capabilities
+
+Title
+Capacidades | VOGARA
+
+Meta description
+Descubre cómo VOGARA integra estrategia, operación, gobernanza y tecnología para fortalecer la ejecución organizacional.
+
+Contact
+
+Title
+Contacto | VOGARA
+
+Meta description
+Contacta a VOGARA para conversar sobre advisory, transformación, gobernanza y ejecución.
+
+⸻
+
+10) Recommended Replit content structure
+
+Since you’re building in Replit, this content should not live hardcoded inside components one section at a time. Better structure:
+	•	content/es.ts
+	•	content/en.ts
+	•	content/pt.ts
+
+And inside each file:
+	•	nav
+	•	home
+	•	about
+	•	services
+	•	capabilities
+	•	contact
+	•	footer
+	•	seo
+
+That will make the multilingual version much cleaner.
+
+My blunt recommendation
+
+For V1, do not overbuild the website.
+
+Keep it to:
+	•	Home
+	•	About
+	•	Services
+	•	Capabilities
+	•	Contact
+
+That is enough to look serious, premium, and credible.
+Trying to add too much too early usually makes the site feel generic and diluted.
+
+Next step should be turning this into a Replit-ready structured content object in code, with:
+	•	Spanish
+	•	English
+	•	Portuguese
+	•	clean keys for every section and button.
